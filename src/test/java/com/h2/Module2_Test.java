@@ -39,6 +39,7 @@ public class Module2_Test {
     private void provideInput(String data) {
         testIn = new ByteArrayInputStream(data.getBytes());
         System.setIn(testIn);
+
     }
 
     private String getOutput() {
