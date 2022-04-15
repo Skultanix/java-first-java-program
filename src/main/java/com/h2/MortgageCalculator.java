@@ -23,7 +23,12 @@ private float getMonthlyInterestRate () {
     return interestRate /12;
 }
 public void calculateMonthlyPayment() {
-    double M = (((getMonthlyInterestRate() * Math.pow(1 + getMonthlyInterestRate(), getNumberOfPayments()))) / ((Math.pow(1 + getMonthlyInterestRate(), getNumberOfPayments()))-1));
+    long P = loanAmount;
+    float r = getMonthlyInterestRate();
+    int n = getNumberOfPayments();
+
+    double M = P * (((r * Math.pow(1 + r, n))) / ((Math.pow((1 + r), n)) - 1));
+    this.monthlyPayment = M;
 }
 
 public String toString() {
